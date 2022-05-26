@@ -1,0 +1,268 @@
+// IMPORTS
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+// MIXINS
+@mixin custom-flex($flex-direction, $align-items, $justify-content) {
+   align-items: $align-items;
+   display: flex;
+   flex-direction: $flex-direction;
+   justify-content: $justify-content;
+}
+
+// ANIMATIONS
+@keyframes zoomIn {
+   0% {
+      opacity: 0;
+      transform: scale(0);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+// CLASSES
+body {
+   font-family: "Poppins";
+   margin: 0;
+}
+button, .createUsername, .searchLogo {
+   border: none;
+   transition: 0.25s;
+}
+// ON HOVER EFFECT
+button:hover, .createUsername:hover, .searchLogo:hover, 
+.bookResultCover:hover, .bookCloseButton:hover, .favoriteRemove:hover, 
+.paginationButton:hover {
+   cursor: pointer;
+   opacity: 0.5;
+}
+input {
+   border: none;
+}
+input:focus {
+   outline: none;
+}
+.container {
+   @include custom-flex(row, center, center);
+   height: 100vh;
+   width: 100vw;
+}
+
+// NAVBAR
+.navbar {
+   @include custom-flex(row, center, space-between);
+   background: #6379F4;
+   border-radius: 0 0 1.5vw 1.5vw;
+   box-shadow: 0 0 1vw 0 #6379F4;
+   position: absolute;
+   width: 100%;
+   z-index: 1;
+}
+.searchArea {
+   @include custom-flex(row, center, space-between);
+   margin-left: -10vw;
+}
+.searchInput {
+   border: 1px solid rgb(33, 50, 102);
+   border-radius: 0.25vw;
+   font-size: 0.8vw;
+   font-weight: 0.8vw;
+   padding: 0.5vw 1vw;
+   transition-duration: 0.5s;
+}
+.searchLogo {
+   filter: brightness(0) invert(1);
+   height: 1.5vw;
+   margin: 0 3vw 0 1.5vw;
+   width: 1.5vw;
+}
+
+// LANDING PAGE
+.landingPageLeft {
+   background: url("https://img.freepik.com/free-vector/people-studying-learning-room_74855-6615.jpg?w=2000");
+   background-size: cover;
+   height: 100%;
+   width: 60%;
+}
+.landingPageLeftLayer {
+   @include custom-flex(column, center, center);
+   background: rgba(33, 50, 102, 0.8);
+   height: 100%;
+   width: 100%;
+}
+.landingPageQuote {
+   color: #D7D7D7;
+   font-size: 2vw;
+   font-weight: bold;
+}
+.landingPageQuoteOwner {
+   color: #D7D7D7;
+   font-size: 1vw;
+}
+.landingPageRight {
+   @include custom-flex(column, center, center);
+   height: 100%;
+   width: 40%;
+}
+.landingPageWelcome {
+   margin-bottom: 3vw;
+   width: 30%;
+}
+.landingPageInfo {
+   font-size: 0.8vw;
+}
+.landingPageInputUsername {
+   border: 0.1vw solid #6379F4;
+   border-radius: 0.25vw;
+   margin: 1vw 0;
+   padding: 1vw;
+   font-size: 1vw;
+   width: 50%;
+}
+.orBorder {
+   @include custom-flex(row, center, center);
+   border-top: 1px solid black;
+   margin: 3vw 0 1vw 0;
+   width: 55%;
+}
+.orText {
+   background: white;
+   font-size: 0.8vw;
+   font-weight: bold;
+   margin-top: -0.6vw;
+   text-align: center;
+   width: 3vw;
+}
+.dontHaveUsername {
+   font-size: 0.8vw;
+}
+.createUsername {
+   color: #6379F4;
+   font-weight: bold;
+}
+
+// HOME
+.bookResultRow {
+   @include custom-flex(row, center, center);
+   margin: 2.5vw 0;
+   width: 100%;
+}
+.bookResultBorder {
+   @include custom-flex(column, center, center);
+   border: 1px solid #414141;
+   border-radius: 0.5vw;
+   height: 15vw;
+   margin: 0 2.5vw;
+   width: 12vw;
+}
+.bookResultCover {
+   border-radius: 1.5vw;
+   height: 80%;
+   padding: 1vw;
+   transition: 0.25s;
+   width: 80%;
+}
+// BOOK INFO
+.bookInfoWindow {
+   @include custom-flex(row, center, center);
+   background: rgba(0, 0, 0, 0.5);
+   height: 100vh;
+   position: absolute;
+   width: 100vw;
+   z-index: 1;
+}
+.bookInfo {
+   @include custom-flex(column, center, center);
+   animation: zoomIn 0.25s;
+   background: #F5F6F8;
+   border: 1px solid #414141;
+   border-radius: 1.5vw;
+   height: 50vh;
+   padding: 1vw 1vw 3vw 1vw;
+   width: 75vw;
+}
+.bookInfoTop {
+   height: 10%;
+   width: 100%;
+}
+.bookInfoTopRight {
+   @include custom-flex(row, center, none);
+   float: right;
+   height: 100%;
+}
+.bookCloseButton {
+   height: 100%;
+   transition: 0.25s;
+}
+.bookInfoBottom {
+   @include custom-flex(row, center, center);
+   height: 90%;
+   width: 100%;
+}
+.bookInfoImage {
+   height: 80%;
+   margin: 0 3vw;
+}
+.bookInfoDetail {
+   @include custom-flex(column, none, space-evenly);
+   font-size: 1vw;
+   height: 100%;
+   margin: 1vw;
+   width: 100%;
+}
+.bookRating {
+   @include custom-flex(row, center, none);
+}
+// RATING STAR
+.ratingStarSize > span {
+   font-size: 2vw !important;
+}
+
+// WISHLIST
+.wishList {
+   @include custom-flex(column, center, space-between);
+   border: 1px solid #9F9F9F;
+   border-radius: 0.5vw;
+   padding: 1.5vw;
+   height: 60%;
+   width: 40%;
+}
+.myWishList {
+   font-size: 1.5vw;
+   font-weight: bold;
+   margin-bottom: 1.5vw;
+   text-align: center;
+   text-decoration: underline;
+}
+.favorite {
+   @include custom-flex(row, center, space-between);
+   border: 1px solid #414141;
+   border-radius: 0.25vw;
+   font-size: 1vw;
+   margin: 1.5vw 0;
+   padding: 0.5vw 1vw;
+}
+.favoriteRemove {
+   color: indianred;
+   font-size: 0.8vw;
+   font-weight: bold;
+}
+.pagination {
+   @include custom-flex(row, center, center);
+}
+.paginationButton {
+   border: 1px solid #414141;
+   border-radius: 0.5vw;
+   font-size: 0.8vw;
+   font-weight: bold;
+   margin: 0 0.5vw;
+   padding: 0.5vw;
+   text-align: center;
+   transition: 0.25s;
+   width: 1.3vw;
+}
+.paginationArrow {
+   background: #6379F4;
+   color: white;
+}
