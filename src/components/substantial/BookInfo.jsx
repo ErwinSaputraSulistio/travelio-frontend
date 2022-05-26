@@ -32,6 +32,7 @@ export default function BookInfo({ author, close, id, img, publisher, rating, ti
 					<div className="bookInfoTopRight">
 						<Button
 							background="#3CB371"
+							customClass="addWishlistMobile"
 							func={ () => { addToMyWishList() } }
 							margin="0 1vw"
 							name="+ Add Wishlist"

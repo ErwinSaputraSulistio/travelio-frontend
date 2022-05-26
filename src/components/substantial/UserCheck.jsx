@@ -33,6 +33,7 @@ export default function UserCheck({ switchCreate }) {
          {/* INPUT & BUTTON */}
          <input className="landingPageInputUsername" name="inputUsername" placeholder="Input your username here" required type="text"/>
          <Button
+            customClass="authBtnMobile"
             fontSize="0.8vw" 
             name="CHECK IN"
             padding="0.8vw" 

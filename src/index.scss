@@ -59,6 +59,9 @@ input:focus {
    width: 100%;
    z-index: 1;
 }
+.navbarLeftSide {
+   @include custom-flex(row, center, center);
+}
 .searchArea {
    @include custom-flex(row, center, space-between);
    margin-left: -10vw;
@@ -76,6 +79,30 @@ input:focus {
    height: 1.5vw;
    margin: 0 3vw 0 1.5vw;
    width: 1.5vw;
+}
+
+@media(max-width: 768px) {
+   .hideThisInMobile {
+      display: none;
+   }
+   .navBtnMobile {
+      font-size: 3.5vw !important;
+      margin: 5vw !important;
+   }
+   .searchInput {
+      border: 1px solid rgb(33, 50, 102);
+      border-radius: 1vw;
+      font-size: 2.5vw;
+      font-weight: 0.8vw;
+      padding: 2.5vw 10vw 2.5vw 5vw;
+      transition-duration: 0.5s;
+   }
+   .searchLogo {
+      filter: brightness(0) invert(1);
+      height: 5vw;
+      margin: 0 5vw;
+      width: 5vw;
+   }
 }
 
 // LANDING PAGE
@@ -142,6 +169,57 @@ input:focus {
    font-weight: bold;
 }
 
+@media(max-width: 768px) {
+   .landingPageLeft {
+      display: none;
+   }
+   .landingPageRight {
+      width: 100%;
+   }
+   .landingPageWelcome {
+      margin-bottom: 15vw;
+      width: 50%;
+   }
+   .landingPageInfo {
+      font-size: 3.5vw;
+   }
+   .landingPageInputUsername {
+      border: 0.1vw solid #6379F4;
+      border-radius: 1vw;
+      margin: 5vw 0;
+      padding: 5vw;
+      font-size: 3.5vw;
+      width: 75%;
+   }
+   .orBorder {
+      @include custom-flex(row, center, center);
+      border-top: 1px solid black;
+      margin: 20vw 0 5vw 0;
+      width: 85%;
+   }
+   .orText {
+      background: white;
+      font-size: 3.5vw;
+      font-weight: bold;
+      margin-top: -3vw;
+      text-align: center;
+      width: 15vw;
+   }
+   .dontHaveUsername {
+      font-size: 3.5vw;
+   }
+   .createUsername {
+      color: #6379F4;
+      font-weight: bold;
+   }
+   .authBtnMobile {
+      border-radius: 1vw !important;
+      font-size: 3.5vw !important;
+      padding: 3.5vw !important;
+      width: 85% !important;
+   }
+}
+
 // HOME
 .bookResultRow {
    @include custom-flex(row, center, center);
@@ -163,6 +241,38 @@ input:focus {
    transition: 0.25s;
    width: 80%;
 }
+
+@media(max-width: 768px) {
+   .homeInMobile {
+      @include custom-flex(row, center, none);
+      height: 85vh;
+      overflow-y: scroll;
+      text-overflow: ellipsis;
+      margin-top: 15vw;
+      padding-top: 10vw;
+   }
+   .bookResultRow {
+      @include custom-flex(column, center, center);
+      margin: 2.5vw 0;
+      width: 100%;
+   }
+   .bookResultBorder {
+      @include custom-flex(row, center, center);
+      border: 1px solid #414141;
+      border-radius: 0.5vw;
+      height: 50vw;
+      margin: 2.5vw 0;
+      width: 40vw;
+   }
+   .bookResultCover {
+      border-radius: 1.5vw;
+      height: 80%;
+      padding: 1vw;
+      transition: 0.25s;
+      width: 80%;
+   }
+}
+
 // BOOK INFO
 .bookInfoWindow {
    @include custom-flex(row, center, center);
@@ -219,6 +329,71 @@ input:focus {
    font-size: 2vw !important;
 }
 
+@media(max-width: 768px) {
+   .bookInfoWindow {
+      @include custom-flex(row, center, center);
+      background: rgba(0, 0, 0, 0.5);
+      height: 100vh;
+      position: absolute;
+      width: 100vw;
+      z-index: 1;
+   }
+   .bookInfo {
+      @include custom-flex(column, center, center);
+      animation: zoomIn 0.25s;
+      background: #F5F6F8;
+      border: 1px solid #414141;
+      border-radius: 1.5vw;
+      height: 75vh;
+      padding: 5vw;
+      width: 75vw;
+   }
+   .bookInfoTop {
+      height: 10%;
+      margin-bottom: 5vw;
+      width: 100%;
+   }
+   .bookInfoTopRight {
+      @include custom-flex(row, center, none);
+      float: right;
+      height: 100%;
+   }
+   .bookCloseButton {
+      height: 75%;
+      transition: 0.25s;
+   }
+   .bookInfoBottom {
+      @include custom-flex(column, center, center);
+      height: 90%;
+      width: 100%;
+   }
+   .bookInfoImage {
+      height: 80%;
+      margin: 0 3vw;
+   }
+   .bookInfoDetail {
+      @include custom-flex(column, none, space-evenly);
+      font-size: 3.5vw;
+      height: 100%;
+      margin: 1vw;
+      width: 100%;
+   }
+   .bookRating {
+      @include custom-flex(row, center, none);
+   }
+   // RATING STAR
+   .ratingStarSize > span {
+      font-size: 6vw !important;
+   }
+   .addWishlistMobile {
+      border-radius: 5vw !important;
+      font-size: 3.5vw !important;
+      margin: 0 5vw !important;
+      padding: 3.5vw !important;
+      width: 40vw !important;
+   }
+}
+
 // WISHLIST
 .wishList {
    @include custom-flex(column, center, space-between);
@@ -265,4 +440,49 @@ input:focus {
 .paginationArrow {
    background: #6379F4;
    color: white;
+}
+
+@media(max-width: 768px) {
+   .wishList {
+      @include custom-flex(column, center, space-between);
+      border: 1px solid #9F9F9F;
+      border-radius: 2.5vw;
+      padding: 5vw;
+      height: 60%;
+      width: 75%;
+   }
+   .myWishList {
+      font-size: 5vw;
+      font-weight: bold;
+      margin-bottom: 10vw;
+      text-align: center;
+      text-decoration: underline;
+   }
+   .favorite {
+      @include custom-flex(row, center, space-between);
+      border: 1px solid #414141;
+      border-radius: 1vw;
+      font-size: 3.5vw;
+      margin: 5vw 0;
+      padding: 2.5vw 5vw;
+   }
+   .favoriteRemove {
+      color: indianred;
+      font-size: 2.5vw;
+      font-weight: bold;
+   }
+   .paginationButton {
+      border: 1px solid #414141;
+      border-radius: 2.5vw;
+      font-size: 3.5vw;
+      font-weight: bold;
+      margin: 0 1.5vw;
+      padding: 2.5vw;
+      text-align: center;
+      width: 5vw;
+   }
+   .paginationArrow {
+      background: #6379F4;
+      color: white;
+   }
 }

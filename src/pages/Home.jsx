@@ -20,7 +20,7 @@ export default function Home() {
                bookResult.length === 0 ?
                <div>Book Explorer</div>
                :
-               <div style={{ width: "100%" }}>
+               <div className="homeInMobile" style={{ width: "100%" }}>
                   <div className="bookResultRow">
                      {
                         bookResult.slice(0, 5).map((item, i) => {

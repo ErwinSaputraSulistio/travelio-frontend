@@ -34,16 +34,18 @@ export default function Navbar() {
    
    return(
       <div className="navbar">
-         <div>
+         <div className="navbarLeftSide">
             <Button
+               customClass="navBtnMobile hideThisInMobile"
                func={ () => { navigate("/home") } }
                margin="1.5vw 1.5vw 1.5vw 3vw"
                name="Home"
             />
             <Button
+               customClass="navBtnMobile"
                func={ () => { navigate("/wishlist") } }
                margin="1.5vw" 
-               name="My Wishlist"
+               name="Wishlist"
             />
          </div>
          <form className="searchArea" onSubmit={ (e) => { searchBookTitle(e) } }>
@@ -63,6 +65,7 @@ export default function Navbar() {
             />
          </form>
          <Button
+            customClass="hideThisInMobile"
             color="darkblue"
             func={ () => { logout() } }
             margin="1.5vw"

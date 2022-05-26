@@ -30,6 +30,7 @@ export default function userCreate({ switchCreate }) {
          {/* INPUT & BUTTON */}
          <input className="landingPageInputUsername" name="inputUsername" placeholder="Input your new username here" required type="text"/>
          <Button 
+            customClass="authBtnMobile"
             fontSize="0.8vw" 
             name="CREATE" 
             padding="0.8vw" 
