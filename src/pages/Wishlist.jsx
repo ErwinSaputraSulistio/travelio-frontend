@@ -26,13 +26,12 @@ export default function Bookmark() {
    }
    useEffect(() => {
       axios.post("https://ciwin-travelio.herokuapp.com/v1/check", { username: localStorage.getItem("reader") })
-      .then((result) => { dispatch(replaceWish(result.data.data.wishlist)) })
+      .then((result) => { 
+         const wishList = result.data.data.wishlist || []
+         dispatch(replaceWish(wishList)) 
+      })
       .catch((error) => { console.log(error.response.data) })
    }, [])
-   useEffect(() => {
-      let newWishList = []
-      
-   }, [myWishList])
    return(
       <div>
          <Navbar/>

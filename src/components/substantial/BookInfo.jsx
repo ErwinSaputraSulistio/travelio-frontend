@@ -7,7 +7,7 @@ import { wishList } from "../../features/userSlice"
 
 export default function BookInfo({ author, close, id, img, publisher, rating, title }) {
 	const dispatch = useDispatch()
-	const myWishList = useSelector((state) => state.user.wishList)
+	const myWishList = useSelector((state) => state.user.wishList) || []
 	const addToMyWishList = () => {
 		if(myWishList.includes(title) === true) {
 			Swal.fire(
